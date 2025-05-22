@@ -9,7 +9,7 @@ include "envcommon" {
 }
 
 inputs = {
-  namespace = "pjatk-dev"
+  name = "pjatk-dev"
   labels = {
     environment = "dev"
   }
