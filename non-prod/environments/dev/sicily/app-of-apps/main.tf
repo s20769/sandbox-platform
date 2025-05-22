@@ -1,16 +1,6 @@
-resource "argocd_project" "project" {
-  metadata {
-    name      = var.argocd_project_name   # np. "pjatk-dev"
-    namespace = var.argocd_namespace      # np. "argocd"
-  }
-
-  spec {
-    description = "Project for pjatk-dev"
-
-    source_repos = ["*"]
-    destinations {
-      namespace = "*"
-      server    = "*"
-    }
-  }
+provider "argocd" {
+  server_addr = var.argocd_server_addr
+  username    = var.argocd_username
+  password    = var.argocd_password
+  # albo użyj auth_token jeśli wolisz; można też przekazywać jako ENV zmienne środowiskowe
 }
